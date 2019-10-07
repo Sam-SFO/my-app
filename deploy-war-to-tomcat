@@ -7,10 +7,20 @@ node{
       //def mvnHome =  tool name: 'maven-3', type: 'maven'   
       sh 'mvn clean package'
    }
+   /*
    stage('Deploy to Tomcat'){
       
       sshagent(['Tomcat-cred']) {
          sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@54.187.244.154:/opt/tomcat/apache-tomcat-9.0.26/webapps/'
+      }
+   } */
+   
+   stage('Deploy to Tomcat'){
+      sshagent(['Tomcat-cred']) {
+         sh """
+           scp -o StrictHostKeyChecking=no target/*.war ubuntu@xxxx:/home/ubuntu
+           ssh -o StrictHostKeyChecking=no ubuntu@xxxx 'cp -r /home/ubuntu/*.war /opt/tomcat/latest/webapps/'
+         """
       }
    }
    /*
