@@ -18,8 +18,8 @@ node{
    stage('Deploy to Tomcat'){
       sshagent(['Tomcat-cred']) {
          sh """
-           scp -o StrictHostKeyChecking=no target/*.war ubuntu@54.187.244.154:/home/ubuntu
-           ssh -o StrictHostKeyChecking=no ubuntu@54.187.244.154 'cp -r /home/ubuntu/*.war /opt/tomcat/latest/webapps/'
+           scp -o StrictHostKeyChecking=no target/*.war ubuntu@34.222.27.255:/home/ubuntu
+           ssh -o StrictHostKeyChecking=no ubuntu@34.222.27.255 'cp -r /home/ubuntu/*.war /opt/tomcat/latest/webapps/'
          """
       }
    }
