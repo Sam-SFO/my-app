@@ -7,14 +7,14 @@ node{
       //def mvnHome =  tool name: 'maven-3', type: 'maven'   
       sh 'mvn clean package'
    }
-   /*
+  
    stage('Deploy to Tomcat'){
       
       sshagent(['Tomcat-cred']) {
-         sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@54.187.244.154:/opt/tomcat/latest/webapps/'
+         sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@34.222.27.255:/opt/tomcat/latest/webapps/'
       }
-   } */
-   
+   } 
+    /*
    stage('Deploy to Tomcat'){
       sshagent(['Tomcat-cred']) {
          sh """
@@ -22,7 +22,7 @@ node{
            ssh -o StrictHostKeyChecking=no ubuntu@34.222.27.255 'cp -r /home/ubuntu/*.war /opt/tomcat/latest/webapps/'
          """
       }
-   }
+   }*/
    /*
    stage('Email Notification'){
       mail bcc: '', body: '''Hi Welcome to jenkins email alerts
