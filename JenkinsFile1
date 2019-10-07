@@ -8,7 +8,7 @@ stage ('Compile Package mvn') {
 stage ('email notification') {
 mail bcc: '', body: '''Hi Welcome to jenkins email alerts
       Thanks
-      Sanjay''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'snj.bahal@gmail.com'
+      Jenkins Admin''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job Success', to: 'snj.bahal@gmail.com'
 }
 
 }
