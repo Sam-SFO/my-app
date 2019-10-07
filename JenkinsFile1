@@ -6,11 +6,9 @@ stage ('Compile Package mvn') {
     sh 'mvn clean package'
 }
 stage ('email notification') {
- emailext body: '''Hi
- The build succeeded
-
- Thanks
- Jenkins Dev''', subject: 'Build success', to: 'snj.bahal@gmail.com'
+mail bcc: '', body: '''Hi Welcome to jenkins email alerts
+      Thanks
+      Sanjay''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'snj.bahal@gmail.com'
 }
 
 }
